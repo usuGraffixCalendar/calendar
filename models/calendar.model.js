@@ -6,13 +6,10 @@ const { param } = require("../middleware/calendar.routes");
 
 /**
  * @typedef {Object} Event
- * @property {Integer} id
- * @property {string} eventName
- * @property {string} eventLocation
- * @property {Date} eventDate
- * @property {Time} eventTime
- * @property {Image} eventImage
- * @property {string} eventTags
+ * @property {string} month
+ * @property {string} quater
+ * @property {string} year
+
  
  */
 
@@ -25,15 +22,15 @@ const { param } = require("../middleware/calendar.routes");
 exports.select = async (query = {}) => {
   try {
     let queryString = "";
-    const param = query;
 
+    const { month, quater, year } = query;
     if (typeof query === "string") {
       queryString = `select * from calevent where month=? and quater=? and year =? `;
     } else {
       queryString = `SELECT eventThumb from calevent`;
     }
     let results = await new Promise((resolve, reject) =>
-      db.query(queryString, (err, results) => {
+      db.query(queryString, [month, quater, year], (err, results) => {
         if (err) {
           reject(err);
         } else {
