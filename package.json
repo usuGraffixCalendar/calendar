@@ -1,0 +1,24 @@
+{
+  "name": "usucalender",
+  "version": "1.0.0",
+  "description": "Small back end for the usucalendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"jest --forceExit",
+    "start": "npx nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usuGraffixCalendar/calendar.git"
+  },
+  "author": "Stewart Mckenzie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/usuGraffixCalendar/calendar/issues"
+  },
+  "homepage": "https://github.com/usuGraffixCalendar/calendar#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
