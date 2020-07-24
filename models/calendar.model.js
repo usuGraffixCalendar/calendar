@@ -23,14 +23,10 @@ exports.select = async (query = {}) => {
   try {
     let queryString = "";
 
-    const { month, quater, year } = query;
-    if (typeof query === "string") {
-      queryString = `select * from calevent where month=? and quater=? and year =? `;
-    } else {
-      queryString = `SELECT eventThumb from calevent`;
-    }
+      queryString = `SELECT * from calevent`;
+    
     let results = await new Promise((resolve, reject) =>
-      db.query(queryString, [month, quater, year], (err, results) => {
+      db.query(queryString,  (err, results) => {
         if (err) {
           reject(err);
         } else {
