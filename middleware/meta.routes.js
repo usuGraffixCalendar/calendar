@@ -4,7 +4,8 @@ const calendarRouter = require("./calendar.routes");
 // const adminRouter = require("./admin.routes");
 const app = express();
 
+
 app.use("/calendar", calendarRouter);
 
-// app.use("/admin", adminRouter);
+
 module.exports = app;

@@ -14,6 +14,7 @@ const Events = require("../models/calendar.model");
  * @returns {object} A JSON object of all events found
  */
 exports.getEvents = async ({ params: { monthString } }, res, next) => {
+  console.log("controller");
   try {
     const foundEvents = await Events.select(monthString);
     if (foundEvents.length == 0) {
@@ -21,6 +22,7 @@ exports.getEvents = async ({ params: { monthString } }, res, next) => {
     }
     return res.send(foundEvents);
   } catch (err) {
+     console.error(err.message);
     next(err);
   }
 };
