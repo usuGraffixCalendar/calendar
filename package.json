@@ -4,7 +4,7 @@
   "description": "Small backend for the usucalendar",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"jest --forceExit",
+    "test": "echo \"test --forceExit",
     "start": "npx nodemon server.js"
   },
   "repository": {
