@@ -23,10 +23,10 @@ exports.select = async (query = {}) => {
   try {
     let queryString = "";
 
-      queryString = `SELECT * from calevent`;
-    
+    queryString = `SELECT * FROM calevent ORDER BY start ASC`;
+
     let results = await new Promise((resolve, reject) =>
-      db.query(queryString,  (err, results) => {
+      db.query(queryString, (err, results) => {
         if (err) {
           reject(err);
         } else {
