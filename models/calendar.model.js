@@ -21,7 +21,7 @@ exports.select = async (query = {}) => {
   try {
     let queryString = "";
 
-    queryString = `SELECT * FROM usuwebdata.calevent  WHERE year="2020"   AND quater="summer" AND month IS NOT NULL ORDER BY start ASC ;`;
+    queryString = `SELECT * FROM usuwebdata.calevent where month IS NOT NULL ORDER BY start ASC;`;
 
     let results = await new Promise((resolve, reject) =>
       db.query(queryString, (err, results) => {
