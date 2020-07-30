@@ -1,8 +1,6 @@
-const path = require("path");
 const db = require("../db");
 // This will handle the errors when we have input validation
 const ErrHTTP = require("../utils/ErrHTTP");
-const { param } = require("../middleware/calendar.routes");
 
 /**
  * @typedef {Object} Event
@@ -23,7 +21,7 @@ exports.select = async (query = {}) => {
   try {
     let queryString = "";
 
-    queryString = `SELECT * FROM calevent ORDER BY start ASC`;
+    queryString = `SELECT * FROM usuwebdata.calevent WHERE year="2020" AND quater="summer" AND month IS NOT NULL ORDER BY start ASC`;
 
     let results = await new Promise((resolve, reject) =>
       db.query(queryString, (err, results) => {
